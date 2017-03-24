@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/recipientInput"
+        android:hint="recipient's username"
+        app:met_floatingLabel="normal"
+        app:met_baseColor="@color/dialogInputColor"
+        app:met_maxCharacters="50"
+        app:met_primaryColor="?colorAccent"
+        app:met_hideUnderline="false"
+        android:textSize="25sp"
+        android:gravity="center"
+        android:singleLine="true"
+        android:lines="1"
+        android:maxLines="1"/>
+
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/amountInput"
+        android:hint="amount to send"
+        app:met_floatingLabel="normal"
+        app:met_baseColor="@color/dialogInputColor"
+        app:met_primaryColor="?colorAccent"
+        app:met_hideUnderline="false"
+        android:textSize="25sp"
+        android:gravity="center"
+        android:singleLine="true"
+        android:lines="1"
+        android:maxLines="1"
+        android:inputType="number" />
+
+</LinearLayout>

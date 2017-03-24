@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Pockets Chat App</string>
+    <string name="title_activity_home">Pockets</string>
+
+
+    <string name="pockets_server_address">http://52.41.193.221:5100</string>
+
+    <string name="action_settings">Settings</string>
+
+
+    <!-- Twitter WebView Strings -->
+    <string name="twitter_callback">http://www.pocketsapp.co/</string>
+    <string name="twitter_oauth_verifier">oauth_verifier</string>
+    <string name="twitter_consumer_key">dEaB7WJaqlJVwbbWgElFnLOeU</string>
+    <string name="twitter_consumer_secret">qFcZONLkyLT6t81pjDQklKGfG3KadcSzZb7AunRxjBfz8Ad1Jv</string>
+
+    <!-- Facebook WebView Strings -->
+    <string name="facebook_callback">http://www.pocketsapp.co/</string>
+    <string name="facebook_oauth_code">code</string>
+    <string name="facebook_app_id">561115234060969</string>
+    <string name="facebook_app_secret">172baf2d7c190d8e3ab54229eed193e0</string>
+
+</resources>

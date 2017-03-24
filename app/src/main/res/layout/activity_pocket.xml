@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:wheel="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="#ffffff"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ListView
+        android:id="@+id/chatOutput"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_above="@+id/llSend"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:stackFromBottom="true"
+        android:transcriptMode="alwaysScroll" />
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="80dp"
+        android:layout_below="@+id/chatOutput"></FrameLayout>
+
+    <RelativeLayout
+        android:id="@+id/llSend"
+        android:layout_width="fill_parent"
+        android:paddingLeft="0dp"
+        android:paddingRight="0dp"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp"
+        android:background="@drawable/chatinputbackground"
+        android:gravity="center_vertical"
+        android:focusable="true"
+        android:focusableInTouchMode="true" >
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/sendMediaButton"
+            android:src="@mipmap/send_media_button"
+            android:background="@android:color/transparent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:visibility="invisible" />
+        <com.pnikosis.materialishprogress.ProgressWheel
+            android:id="@+id/sendMediaSpinner"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:gravity="center_vertical|center_horizontal"
+            android:layout_alignParentLeft="true"
+            android:layout_gravity="center"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:visibility="invisible"
+            wheel:matProg_barColor="#f1a31d"
+            wheel:matProg_progressIndeterminate="true" />
+
+        <EditText
+            android:id="@+id/chatInput"
+            android:layout_toLeftOf="@+id/sendMessageButton"
+            android:layout_alignBottom="@+id/sendMessageButton"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Type Here"
+            android:inputType="textShortMessage"
+            android:imeOptions="actionSend"
+            android:textColor="#ff000000"
+            android:maxLines="1"
+            android:lines="1"
+            android:background="@drawable/edittext"
+            android:gravity="center_vertical|center_horizontal"
+            android:textStyle="italic"
+            android:layout_alignParentBottom="false"
+            android:layout_toRightOf="@+id/sendMediaButton" />
+        <ImageButton
+            android:id="@+id/sendMessageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical|center_horizontal"
+            android:layout_alignParentRight="true"
+            android:background="@android:color/transparent"
+            android:src="@mipmap/send_message_button"
+            android:layout_gravity="center"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp">
+        </ImageButton>
+        <com.pnikosis.materialishprogress.ProgressWheel
+            android:id="@+id/sendMessageSpinner"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:gravity="center_vertical|center_horizontal"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="center"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:visibility="invisible"
+            wheel:matProg_barColor="#f1a31d"
+            wheel:matProg_progressIndeterminate="true" />
+
+    </RelativeLayout>
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/testImage"
+        android:layout_alignTop="@+id/chatOutput" />
+
+</RelativeLayout>

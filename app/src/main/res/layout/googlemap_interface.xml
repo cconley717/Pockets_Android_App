@@ -1,0 +1,47 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="._Main.Home"
+    android:id="@+id/rootView">
+
+    <fragment
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:name="com.pocketschatapp._HomeUtilities.CustomMapFragment"
+        android:id="@+id/map"
+        android:layout_weight="1"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="0dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="0dp" />
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/mapSpinner"
+        android:background="@drawable/map_spinner"
+        android:visibility="invisible" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/pocketCostDisplay"
+        android:layout_alignParentRight="true"
+        android:textSize="30dp"
+        android:visibility="invisible"
+        android:background="@drawable/cost_background" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/floatingSearchButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="25dp"
+        android:layout_marginRight="25dp"
+        android:src="@mipmap/ic_search_white_48dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true" />
+
+</RelativeLayout>

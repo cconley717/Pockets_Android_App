@@ -1,0 +1,73 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" tools:context=".MainActivity">
+
+
+    <item
+        android:id="@+id/mapTypes"
+        android:title=""
+        android:icon="@mipmap/ic_action_map"
+        android:orderInCategory="0"
+        app:showAsAction="always">
+        <menu>
+            <item
+                android:id="@+id/plainMap"
+                android:title="Plain Map" />
+            <item
+                android:id="@+id/geographicMap"
+                android:title="Geographic Map" />
+            <item
+                android:id="@+id/satelliteMap"
+                android:title="Satellite Map" />
+        </menu>
+    </item>
+
+    <item android:id="@+id/findLocation"
+        android:title=""
+        android:icon="@mipmap/ic_action_location_off"
+        android:orderInCategory="1"
+        app:showAsAction="always">
+
+        <menu>
+            <item
+                android:id="@+id/findMe"
+                android:title="Find Me" />
+            <item
+                android:id="@+id/zoomInOnMe"
+                android:title="Zoom In On Me" />
+            <item
+                android:id="@+id/zoomOutOnMe"
+                android:title="Zoom Out On Me" />
+            <item
+                android:id="@+id/worldView"
+                android:title="World View" />
+        </menu>
+    </item>
+
+    <item
+        android:id="@+id/manage"
+        android:title=""
+        android:icon="@mipmap/ic_action_collection"
+        android:orderInCategory="2"
+        app:showAsAction="always">
+        <menu>
+            <item
+                android:id="@+id/manageRooms"
+                android:title="Manage Pockets" />
+            <item
+                android:id="@+id/showLint"
+                android:title="My Lint" />
+            <item
+                android:id="@+id/showHelp"
+                android:title="Help" />
+            <item
+                android:id="@+id/showLogin"
+                android:title="Log In" />
+            <item
+                android:id="@+id/doLogOut"
+                android:title="Log Out" />
+        </menu>
+    </item>
+
+
+</menu>

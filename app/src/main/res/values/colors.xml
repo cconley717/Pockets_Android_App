@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FFF6AA</color>
+    <color name="colorPrimaryDark">#E6CF00</color>
+    <color name="colorAccent">#E6CF00</color>
+
+
+
+
+    <color name="dialogBackgroundColor">#EEEEEE</color>
+
+    <color name="dialogTitleColor">#E6CF00</color>
+    <color name="dialogInputColor">#000000</color>
+    <color name="dialogButtonColor">#E6CF00</color>
+
+    <color name="dialogPositiveButtonColor">#000000</color>
+    <color name="dialogNegativeButtonColor">#000000</color>
+    <color name="dialogNeutralButtonColor">#000000</color>
+
+    <color name="colorGgg">#000000</color>
+</resources>
