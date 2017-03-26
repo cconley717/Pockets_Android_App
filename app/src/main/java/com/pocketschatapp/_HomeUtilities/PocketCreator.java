@@ -116,6 +116,7 @@ public class PocketCreator extends View implements View.OnTouchListener, View.On
         mScaleDetector.onTouchEvent(event);
 
         final RelativeLayout.LayoutParams par = (RelativeLayout.LayoutParams) v.getLayoutParams();
+
         switch(event.getAction())
         {
             case MotionEvent.ACTION_DOWN:
@@ -144,17 +145,14 @@ public class PocketCreator extends View implements View.OnTouchListener, View.On
                 longTouched = false;
 
                 par.topMargin+=(int)event.getRawY()-prevY;
-                prevY=(int)event.getRawY();
                 par.leftMargin+=(int)event.getRawX()-prevX;
-                prevX=(int)event.getRawX();
                 v.setLayoutParams(par);
 
-
-                if((Math.abs(prevX - event.getX()) > 15.0) || (Math.abs(prevY - event.getY()) > 15.0))
-                {
+                if((Math.abs(prevX - event.getRawX()) > 2.0) || (Math.abs(prevY - event.getRawY()) > 2.0))
                     moving = true;
-                }
 
+                prevY=(int)event.getRawY();
+                prevX=(int)event.getRawX();
 
                 return false;
             }
@@ -193,15 +191,16 @@ public class PocketCreator extends View implements View.OnTouchListener, View.On
         Log.d("testing", "long touched");
 
         if(moving)
-        {
             return false;
-        }
 
         //Home.addRoomToMap(v.getX() + getRadius(), v.getY() + getRadius());
 
         longTouchedCenterX = v.getX() + getRadius();
         longTouchedCenterY = v.getY() + getRadius();
 
+        /*
+        if the creator is not moved too much, then show the creation prompt
+         */
 
 
         //zoom level

@@ -97,7 +97,7 @@ public class Home extends AppCompatActivity {
 
     private Map<String, PocketMarker> mapPockets = new HashMap<>();
 
-
+    private double previousMapCenterLongitude, previousMapCenterLatitude;
 
 
     @Override
@@ -338,7 +338,6 @@ public class Home extends AppCompatActivity {
                 customMapFragment.setOnDragListener(new MapWrapperLayout.OnDragListener() {
                     @Override
                     public void onDrag(MotionEvent motionEvent) {
-
                         //Log.d("testing", "Map Motion Event: " + String.format("ME: %s", motionEvent));
 
                         if (motionEvent.getAction() == MotionEvent.ACTION_UP) {
@@ -350,6 +349,13 @@ public class Home extends AppCompatActivity {
                         }
                     }
                 });
+
+                /*
+
+                if the user moves the map, then hide the info window
+                    touching the info window will trigger the map click listener
+                        if the map is unmoved, then do not hide the info window
+                 */
 
                 googleMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
                     @Override
@@ -495,6 +501,9 @@ public class Home extends AppCompatActivity {
 
                 marker.showInfoWindow();
 
+                previousMapCenterLongitude = mGoogleMap.getCameraPosition().target.longitude;
+                previousMapCenterLatitude = mGoogleMap.getCameraPosition().target.latitude;
+
                 updatePocketCostDisplay();
             }
 
@@ -573,6 +582,10 @@ public class Home extends AppCompatActivity {
     }
 
     private void mapReactToTouch(boolean shouldOnlyUpdatePocketCostDisplay) {
+        Log.d("testing", "mapReactToTouch");
+
+        double currentMapCenterLongitude = mGoogleMap.getCameraPosition().target.longitude;
+        double currentMapCenterLatitude = mGoogleMap.getCameraPosition().target.latitude;
 
         if(shouldOnlyUpdatePocketCostDisplay)
             updatePocketCostDisplay();
@@ -583,14 +596,22 @@ public class Home extends AppCompatActivity {
             if (pocketCreator != null)
                 pocketCreator.hide();
 
-            if (userLocationMarker != null)
-                userLocationMarker.hideInfoWindow();
 
-            if (selectedPocketMarker != null)
-                selectedPocketMarker.hideInfoWindow();
+            if(previousMapCenterLongitude != currentMapCenterLongitude && previousMapCenterLatitude != currentMapCenterLatitude) {
+                if (userLocationMarker != null)
+                    userLocationMarker.hideInfoWindow();
+
+                if (selectedPocketMarker != null)
+                    selectedPocketMarker.hideInfoWindow();
+            }
+
+
 
             updatePocketCostDisplay();
         }
+
+        previousMapCenterLongitude = currentMapCenterLongitude;
+        previousMapCenterLatitude = currentMapCenterLatitude;
     }
 
     public void updatePocketCostDisplay() {
